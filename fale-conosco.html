@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css">
+</head>
+
+<script src="_javascript/funcoes.js"></script>
+
+<body>
+<div id="interface">
+    <header id="cabecalho">
+    
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png">
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalhoDoArtigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+            </header>
+            <!------------------------Criação de um formulário:------------------------>
+                <form method="post" id="formContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
+                <!--calc_total()-quando clicar no botão esta função será disparada/executada-->
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                            <p> <label for="cmpNome">Nome:</label> <input type="text" name="txtNome" id="cmpNome" size="20" maxlength="30" placeholder="nome completo"></p>
+                            <p> <label for="cmpSenha">Senha:</label> <input type="password" name="txtSenha" id="cmpSenha" size="8" maxlength="8" placeholder="8 dígitos"></p>
+                            <p> <label for="cmpEmail">E-mail:</label> <input type="email" name="txtEmail" id="cmpEmail" size="20" maxlength="40" placeholder="digite o seu email"></p>
+                            <fieldset id="sexo">
+                                <legend>Sexo:</legend>
+                                    <input type="radio" name="txtSexo" id="cmpMasc" checked> <label for="cmpMasc">Masculino</label><br>
+                                    <input type="radio" name="txtSexo" id="cmpFem"> <label for="cmpFem">Feminino</label>
+                            </fieldset>
+                            <p> <label for="cmpNasc">Data de Nascimento:</label> <input type="date" name="txtNasc" id="cmpNasc"></p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                            <p> <label for="cmpMorada">Logradouro:</label> <input type="text" name="txtMorada" id="cmpMorada" size="18" maxlength="80" placeholder="Rua, Avenida, Travessa..."></p>
+                            <p> <label for="cmpNum">Número:</label> <input type="number" name="txtNum" id="cmpNum" min="0" max="99999"></p>
+                            <p> <label for="cmpEst">Estado:</label>
+                                <select name="txtEst" id="cmpEst"> <!--select, cria caixas combinadas com opções de escolha-->
+                                    <optgroup label="Região Sudeste"> <!--optgroup, permite agrupar as opções-->
+                                        <option value="RJ">Rio de Janeiro</option> <!--o valor/sigla contido no value que será enviado para o banco de dados-->
+                                        <option value="SP" selected>São Paulo</option> <!--selected, esta opção já vem marcada/selecionada-->
+                                        <option value="MG">Minas Gerais</option>
+                                    </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                    </optgroup>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="cmpCid">Cidade:</label>
+                                <input type="text" name="txtCid" id="cmpCid" size="20" maxlength="40" placeholder="sua cidade" list="cidades"> <!--list, vai ligar o objeto cidade a lista de dados-->
+                            </p>
+                            <datalist id="cidades"> <!--datalist, cria uma lista de dados (nesse caso, relativamente a cidades)-->
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova Iguaçu"></option>
+                                <option value="Niterói"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                            <p>
+                                <label for="cmpUrg">Grau de Urgência:</label>
+                                Mín<input type="range" name="txtUrg" id="cmpUrg" min="0" max="10" step="2">Máx
+                                <!--range, linha em que é possível fazer uma classificação. step, de quanto em quanto essa classificação pode ser feita-->
+                            </p>
+                            <p>
+                                <label for="cmpMsg">Mensagem:</label>
+                                <textarea name="txtMsg" id="cmpMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem..."></textarea>
+                                <!--textarea, é uma caixa de texto maior, onde se pode definir o nº de linhas e colunas-->
+                            </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                            <p>
+                                <input type="checkbox" name="txtPed" id="cmpPed" checked> <!--checkbox, permite marcar a opção caso queira-->
+                                <label for="cmpPed">Gostaria de adquirir um Google Glass quando disponível</label>
+                            </p>
+                            <p>
+                                <label for="cmpCor">Cor:</label> <input type="color" name="txtCor" id="cmpCor" value="#0000FF"></p> <!--pode escolher a cor que quiser, por padrão vem preto. Value permite colocar a cor que quer que venha por padrão-->
+                            <p>
+                                <label for="cmpQuant">Quantidade:</label>
+                                <input type="number" name="txtQuant" id="cmpQuant" min="0" max="5" value="0">
+                            </p>
+                            <p>
+                                <label for="cmpTot">Preço Total: R$</label>
+                                <input type="text" name="txtTot" id="cmpTot" placeholder="total a pagar" readonly>
+                                <!--readonly, sig. q esta caixa é somente para leitura, não é possível digitar nada nela-->
+                            </p>
+                    </fieldset>
+                    <!--------------Criação de um botão, várias formas------------>
+                    <!--<input type="submit" value="Enviar">-->
+                    <div id="enviar">
+                        <input type="image" name="txtEnviar" src="_imagens/botao-enviar.png" alt="botão para enviar"> <!--permite colocar um botão que é uma imagem que tem de estar na sua máquina-->
+                    </div>
+                </form>
+        </article>
+    </section>
+
+    <!--Interatividade com o formulário:-->
+    <script>
+        function calc_total()  {
+            var quantidade = parseInt(document.getElementById('cmpQuant').value)
+            var total = quantidade * 1500
+            document.getElementById('cmpTot').value = total
+        }
+    </script>
+
+<footer id="rodape">
+    <p>Copyright &copy; 2013/2022 - by Gustavo Guanabara & <a href="https://www.facebook.com/" target="_blank" id="meuFace">Vandinelson Gomes</a> <br>
+    <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p> 
+</footer>
+</div>
+</body>
+</html>

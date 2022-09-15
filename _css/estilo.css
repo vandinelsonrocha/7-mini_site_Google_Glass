@@ -1,0 +1,239 @@
+@charset "UTF-8"; /*evita problemas com acentuação*/
+
+/*------------Fontes em CSS3--------------*/
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web); /*fonte importada do site->www.google/fonts*/
+@font-face {
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf"); /*caminho da fonte que está no meu computador*/
+}
+
+p  {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+body  {
+    font-family: Arial, sans-serif;  /*página index formatada com uma fonte não serifada*/
+    background-color: #dddddd;
+    color: rgba(0,0,0,1)
+}
+
+/*------------Formatação do cabeçalho--------------*/
+header#cabecalho img#icone  {
+    position: absolute;
+    left: 955px;
+    top: 70px;
+}
+header#cabecalho  {
+    border-bottom: 1px #606060 solid;
+    height: 150px;
+    /*Colocar uma imagem de fundo:*/
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px; /*estando na pasta css, tem que voltar na pasta imagens para pegar a imagem e colocar como fundo*/
+}
+/*para o título de nível 1:*/
+header#cabecalho h1  {
+    font-family: 'FonteLogo', sans-serif; 
+    font-size: 30px;
+    color:#606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+header#cabecalho h2  {
+    font-family: 'Titillium Web', sans-serif; /*integrando a fonte importada ao CSS*/
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+/*------------Formatação de interfaces--------------*/
+div#interface  {  /*o menu não muda visto que está em posição absoluta*/
+    width: 900px; 
+    background-color: #ffffff;
+    margin: -20px auto 0px auto; /*forma de centralizar a div*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    padding: 10px; /*o texto está colado nas margens da div, dar um afastamento 10px tanto em cima, direita, baixo e esquerda*/
+}
+
+/*------------Formatação de imagem--------------*/
+/*Onde tiver uma imagem de classe 'foto-legenda' faça o seguinte:*/
+figure.foto-legenda  {
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+
+figure.foto-legenda img  {
+    width: 100%;
+    height: 100%;
+}
+/*Estilizando a legenda da imagem*/
+figure.foto-legenda figcaption  {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+}
+/*Qd passar o mouse por cima da imagem, a legenda aparece*/
+figure.foto-legenda:hover figcaption  {
+    opacity: 1;
+}
+
+/*--------Formatação do menu-----------*/
+nav#menu ul  {
+    list-style: none; /*escondendo os marcadores da lista*/
+    text-transform: uppercase; /*transforma as letras da lista em maiúsculas*/
+    position: absolute;
+    top: -20px;  /*colocando o menu exatamente com a linha do navegador*/
+    left: 495px;
+}
+nav#menu li  {
+    display: inline-block; /*coloca todos os itens na horizontal um ao lado do outro*/
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s; /*transição->qd passar o mouse sobre os itens do menu demora 1s para aparecer a cor de fundo*/
+}
+nav#menu li:hover  { /*hover->dá um novo destaque para os itens do menu qd passar o mouse por cima*/
+    background-color: #606060;
+}
+
+/*Tornando o menu flutuante*/
+nav#menu  {
+    display: block; /*esta propriedade faz com que o menu flutui*/
+}
+nav#menu h1  {
+    display: none; /*escondendo o título do menu*/
+}
+/*Formatando os links*/
+nav#menu a  {
+    color: #000000;
+    text-decoration: none; /*remove os sublinhados*/
+}
+nav#menu a:hover  {
+    color: #ffffff; /*qd passar o mouse sobre os links a cor do texto muda para branco*/
+    text-decoration: underline; /*qd passar o mouse sobre os links, eles ficam sublinhados*/
+}
+
+a#meuFace  {
+    color: rgb(23, 137, 230);
+}
+a  {
+    color: #606060;
+    text-decoration: none; /*tira a cor azul do link*/
+}
+a:hover  {
+    text-decoration: underline;
+}
+
+/*--------Dividindo a página index-----------*/
+/*Formatação da sessão>divisão lado esquerdo*/
+section#corpo  {
+    display: block;
+    width: 487px;
+    float: left; /*flutuar->posicionando do lado esquerdo*/
+    border-right: 1px solid #606060;
+    padding: 15px;
+}
+/*Formatação da área lateral>divisão lado direito*/
+aside#lateral  {
+    display: block;
+    width: 350px;
+    float: right;
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+aside#lateral h1  {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+aside#lateral h2  {
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5px;
+}
+/*Formatação do rodapé*/
+footer#rodape  {
+    clear: both; /*o rodapé não fica em nenhuma divisão da página, então retirei a divisão para o rodapé*/
+    border-top: 1px solid #606060;
+}
+footer#rodape p  {
+    text-align: center;
+}
+
+/*--------Melhorada na interface-----------*/
+/*formatação do conteúdo dentro da tag article*/
+section#corpo article#noticia-principal h2  {
+    font-size: 13pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+header#cabecalhoDoArtigo h1  {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+header#cabecalhoDoArtigo h2  {
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+}
+header#cabecalhoDoArtigo h3  {
+    font-size: 12px;
+    color: #606060;
+}
+.direita  {
+    text-align: right;
+}
+
+/*--------Formatação da tabela-----------*/
+table#tabela  {
+    border: 1px solid #606060; /*cria a borda exterior/a volta da tabela*/
+    border-spacing: 0px; /*remove o espaço entre as bordas*/
+}
+table#tabela caption  {
+    color: #888888;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+table#tabela caption span  {
+    display: block; /*bloco flutuante, desconectado do texto*/
+    float: right;   /*flutuação a direita*/
+    color: #000000;
+    font-size: 8pt;
+    margin-top: 10px;
+}
+table#tabela td  {
+    border: 1px solid #606060; /*cria as bordas interiores/dentro da tabela*/
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+table#tabela td.colEsquerda  { /*formatação para a coluna da esquerda*/
+    color: #ffffff;
+    background-color: #606060;
+    vertical-align: top; /*alinha os conteúdos da coluna a esquerda sempre para a 1ª linha respetiva a coluna*/
+    font-weight: bold; /*negrito em CSS*/
+}
+table#tabela td.colDireita  { /*formatação para a coluna da direita*/
+    background-color: #cecece;
+}
+
+

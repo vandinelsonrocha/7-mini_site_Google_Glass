@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste JavaScript-3.1</title>
+
+    <!--Criando uma única função que trabalha com os 3 estado da lâmpada, usando um parâmetro-->
+    <script>
+        var lampQuebrada = false //variável global, usada ao longo de todo o código
+        function mudaLampada(estado)  {
+            if(!lampQuebrada)  {
+                //------ Simplificando o código - usando concatenação do parâmetro que corresponde ao estado da lâmpada------
+                document.getElementById("lampada").src = "../_imagens/" + estado + ".jpg"
+                if(estado == "lampada-quebrada")  {
+                    lampQuebrada = true
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    
+    <h1>Acenda, apaque ou quebre a lâmpada</h1>
+    <img src="../_imagens/lampada-apagada.jpg" id="lampada" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')" alt="lâmpada">
+    
+</body>
+</html>

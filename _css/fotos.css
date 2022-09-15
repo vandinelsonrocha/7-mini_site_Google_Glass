@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/*--------------------------------------Formatação do álbum de fotos--------------------------------------*/
+ul#album-fotos  {
+    width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+    list-style: none;
+}
+/*formatação para os itens da lista*/
+ul#album-fotos li  {
+    float: left; /*itens um ao lado do outro*/
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    transition: all .4s ease-in; /*fazendo com que o zoom in seja de forma mais suave*/
+}
+
+ul#album-fotos li span  {
+    opacity: 0;  /*esconde o texto da tag span*/
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000; /*sombra do texto preto*/
+    background-color: rgba(0,0,0,0.3);
+    font-size: 9pt;
+    line-height: 370px;
+    padding: 5px;
+}
+
+/*ZOOM IN - ampliação*/
+ul#album-fotos li:hover  {
+    transform: scale(1.5); /*qd passar o mouse sobre as fotos, elas ficam maiores/ampliação -> zoom in*/
+}
+
+ul#album-fotos li:hover span  { /*toda vez que passar o mouse sobre as fotos,*/
+    opacity: 1;  /*...o texto da tag span aparece*/
+}
+
+/*colocar uma foto dentro de cada item/quadradinho*/
+ul#album-fotos li#foto1  {
+    background: url('../_imagens/galeria-01.jpg') no-repeat;
+
+/*Será feito um ZOOM toda vez q passar o mouse sobre as fotos, para isso preciso do centro das fotos sendo q estão recortadas, primeiramente deve-se colocar o tamanho original das fotos*/
+    background-size: 400px 400px; /*tamanho original da imagem de fundo*/
+    background-position: 50% 50%; /*posição da imagem de fundo -> centro*/
+    background-color: #ffffff;
+}
+ul#album-fotos li#foto2  {
+    background: url('../_imagens/galeria-02.jpg') no-repeat;
+    background-size: 400px 400px; 
+    background-position: 50% 50%; 
+    background-color: #ffffff;
+}
+ul#album-fotos li#foto3  {
+    background: url('../_imagens/galeria-03.jpg') no-repeat;
+    background-size: 400px 400px; 
+    background-position: 50% 50%; 
+    background-color: #ffffff;
+}
+ul#album-fotos li#foto4  {
+    background: url('../_imagens/galeria-04.jpg') no-repeat;
+    background-size: 400px 400px; 
+    background-position: 50% 50%; 
+    background-color: #ffffff;
+}
+ul#album-fotos li#foto5  {
+    background: url('../_imagens/galeria-05.jpg') no-repeat;
+    background-size: 400px 400px; 
+    background-position: 50% 50%; 
+    background-color: #ffffff;
+}
+ul#album-fotos li#foto6  {
+    background: url('../_imagens/galeria-06.jpg') no-repeat;
+    background-size: 400px 400px; 
+    background-position: 50% 50%; 
+    background-color: #ffffff;
+}
+
+/*ZOOM OUT - encolher:*/
+ul#album-fotos li#foto1:hover  {
+    background-position: 0% 0%; /*tira a posição do centro e coloca na q estava antes -> topo*/
+    background-size: 200px 200px; /*reduz a imagem para o tamanho que estava antes*/
+}
+ul#album-fotos li#foto2:hover  {
+    background-position: 0% 0%; 
+    background-size: 200px 200px; 
+}
+ul#album-fotos li#foto3:hover  {
+    background-position: 0% 0%; 
+    background-size: 200px 200px; 
+}
+ul#album-fotos li#foto4:hover  {
+    background-position: 0% 0%; 
+    background-size: 200px 200px; 
+}
+ul#album-fotos li#foto5:hover  {
+    background-position: 0% 0%; 
+    background-size: 200px 200px; 
+}
+ul#album-fotos li#foto6:hover  {
+    background-position: 0% 0%; 
+    background-size: 200px 200px; 
+}
